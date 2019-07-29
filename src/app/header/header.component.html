@@ -1,0 +1,61 @@
+ 
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+ 
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                          class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Bootstrap Admin Template </a>
+            <div class="nav-collapse">
+              <ul class="nav pull-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                  class="icon-cog"></i> Account <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="javascript:;">Settings</a></li>
+                    <li><a href="javascript:;">Help</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                  class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="javascript:;">Profile</a></li>
+                    <li><a href="javascript:;">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="navbar-search pull-right">
+                <input type="text" class="search-query" placeholder="Search">
+              </form>
+            </div>
+            <!--/.nav-collapse --> 
+          </div>
+          <!-- /container --> 
+        </div>
+        <!-- /navbar-inner --> 
+      </div>
+      <!-- /navbar -->
+      <div class="subnavbar">
+        <div class="subnavbar-inner">
+          <div class="container">
+            <ul class="mainnav" style ="width:100%">
+              <li *ngFor ="let list of header" [routerLink]="[list.path]"  routerLinkActive="active"><a  ><i class="{{list.icon}}"></i><span>{{list.name}}</span> </a> </li>
+                <li   *ngIf ="showSelect"style ="    float: right;
+                /* margin-left: 75%; */
+                border-left: 0px;
+           " ><div class="form-group">
+                  <label for="sel1" style ="text-align: -webkit-auto;">Select Site:</label>
+                  <select class="form-control" id="sel1" [(ngModel)]="selected"
+                  (change)='onOptionsSelected($event)' >
+                    <option *ngFor = "let list of siteLists" [value]="list.id">{{list.name}}</option>
+                     
+                  </select>
+                </div></li>
+            </ul>
+          </div>
+          <!-- /container --> 
+        </div>
+        <!-- /subnavbar-inner --> 
+      </div>

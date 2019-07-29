@@ -1,0 +1,359 @@
+<!-- /subnavbar -->
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="row">
+          <div class="span12">
+
+          <div class="widget widget-nopad">
+            <div class="widget-header"> <i class="icon-list-alt"></i>
+              <h3> Today's Stats</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <div class="widget big-stats-container">
+                <div class="widget-content">
+                   <div id="big_stats" class="cf">
+                      <div class="row">
+                          <div class="span12" style="    margin-top: 10px; padding-left: 3%;">
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" ><img style="width: 15px;" src ="/assets/img/website-home.svg"></div>
+                                        <div class="text-info text-center mt-3"><h4>Total Sites</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.ibmsTotalSite + countListLany.amrTotalSite}}</h3></div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                   <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>IBMS Sites</strong>: {{countListLany.ibmsTotalSite}}</p>
+                                   <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>ARM Sites</strong>: {{countListLany.amrTotalSite}}</p>
+
+                                </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf1}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" ><img style="width: 15px;" src ="/assets/img/electric-meter.svg"></div>
+                                        <div class="text-info text-center mt-3"><h4>Total AMR Sites</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.amrTotalSite}}</h3></div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                        <a class = "pointer"(click)="getSiteList('AMR','Maint')"> <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>Maintenance Sites</strong>: {{countListLany.amrTotalMaintSite}}</p></a>
+                                        <a class = "pointer"(click)="getSiteList('AMR','Live')">  <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Live Sites</strong>: {{countListLany.amrTotalLiveSite}}</p></a>
+     
+                                      
+                                </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf2}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" ><img style="width: 15px;" src ="/assets/img/iconfinder_office_3827981.svg"></div>
+                                        <div class="text-info text-center mt-3"><h4>Total IBMS Sites</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.ibmsTotalSite}}</h3></div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                  <a class = "pointer"(click)="getSiteList('IBMS','Maint')">    <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>Maintenance Sites</strong>: {{countListLany.ibmsTotalSite}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('IBMS','Live')">       <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Live Sites</strong>: {{countListLany.ibmsTotalLiveSite}}</p></a>
+                            </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf3}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" ><img style="width: 15px;" src ="/assets/img/iconfinder_ui_58_3556100.svg"></div>
+                                        <div class="text-info text-center mt-3"><h4>Total DL</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.totalDL}}</h3></div> 
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                  <a class = "pointer"(click)="getSiteList('DL','healthy')">       <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>healthyDL</strong>: {{countListLany.healthyDL}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DL','Faulty')">           <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Faulty</strong>: {{countListLany.faultyDL}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DL','Maint')">      <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Maintenance </strong>:  {{countListLany.maintenanceDL}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DL','Connected')">       <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Connected</strong>:  {{countListLany.connectedDL}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DL','Disconnected')">  <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Disconnected</strong>: {{countListLany.disconnectedDL}}</p></a> 
+
+
+
+                            </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf4}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" ><img style="width: 15px;height: 15px;" src ="/assets/img/iconfinder_mobile_2199083.svg"></div>
+                                        <div class="text-info text-center mt-3"><h4>Total DIC</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.dicsNo}}</h3></div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                  <a class = "pointer"(click)="getSiteList('DIC','healthy')">   <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>Healthy</strong>: {{countListLany.healthyDIC}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DIC','Maint')">    <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Maintenance</strong>: {{countListLany.maintenanceDIC}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DIC','unhealthy')">   <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Un healthy</strong>: {{countListLany.unhealthyDIC}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('DIC','Faulty')">   <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>Faulty</strong>: {{countListLany.faultyDIC}}</p></a>
+
+ 
+
+                                </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                      <div class="span2" style="margin-left: 10px">
+                          <div class="flip-card {{flipcarf5}}">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class=" border-info mx-sm-1 p-3">
+                                        <div class="card border-info shadow text-info p-3 my-card" >                                    <img style="width: 15px;height: 15px;" src ="/assets/img/iconfinder_circle-dashboard-meter-fuel-gauge-glyph_763464.svg">
+                                        </div>
+                                        <div class="text-info text-center mt-3"><h4>Total Meter</h4></div>
+                                        <div class="text-info text-center mt-2"><h3>{{countListLany.meterCount}}</h3></div>
+                                    </div>
+                                </div>
+                                <div class="flip-card-back mt-3">
+                                  <a class = "pointer"(click)="getSiteList('Meter','healthy')">        <p style ="margin: 8px;margin-bottom:0px; float:left;"> <strong>healthyMeter</strong>: {{countListLany.healthyMeter}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('Meter','unhealthy')">    <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>unhealthyMeter</strong>: {{countListLany.unhealthyMeter}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('Meter','Faulty')">    <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>faultymeter</strong>: {{countListLany.faultymeter}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('Meter','Maint')">    <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>maintMeter</strong>:  {{countListLany.maintMeter}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('Meter','ZeroReading')">    <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>zeroReading</strong>: {{countListLany.zeroReading}}</p></a>
+                                  <a class = "pointer"(click)="getSiteList('Meter','LowBalance')">   <p style ="margin: 8px; margin-bottom:0px;margin-top:0px;float:left;"> <strong>lowBalance</strong>: {{countListLany.lowBalance}}</p></a>
+
+
+                                </div>
+                              </div>
+                            </div>
+                            
+                      </div>
+                                </div></div>
+                   
+                    <!-- .stat --> 
+                  </div>
+                </div>
+                <!-- /widget-content --> 
+                
+              </div>
+            </div>
+          </div>
+          </div>
+          <span class ="span12">
+            <div class="widget" *ngIf ="lineChartData">
+              <div class="widget-header"> <i class="icon-signal"></i>
+                <h3> Area Chart Example</h3>
+                <button type="button" class="btn btn-labeled btn-default" style ="float: right" (click) = "nextGraph();">
+                  <span class="btn-label"><i class="glyphicon glyphicon-chevron-left"></i></span>Left</button>
+              <button type="button" (click) = "preGraph();" class="btn btn-labeled btn-default"  style ="float: right" [disabled] = "fromLimit == 0">
+                  <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                  Right</button>
+              </div>
+
+              <!-- /widget-header -->
+              <div class="widget-content"> 
+                
+                        <canvas baseChart style="width:100%; height: 429px !important;"
+                                    [datasets]="lineChartData"
+                                    [labels]="lineChartLabels"
+                                    [options]="lineChartOptions"
+                                    [colors]="lineChartColors"
+                                    [legend]="lineChartLegend"
+                                    [chartType]="lineChartType"
+                                    [plugins]="lineChartPlugins"
+                                  ></canvas>
+                                <!-- /area-chart --> 
+              </div>
+              <!-- /widget-content --> 
+            </div>
+          </span>
+          <div class="span6">
+
+          <div class="widget">
+              <div class="widget-header"> <i class="icon-file"></i>
+                <h3> Notice Board</h3>
+              </div>
+              <!-- /widget-header -->
+              <div class="widget-content">
+                <ul class="messages_layout">
+                  <li *ngFor ="let list of noticeBoard" class="{{getclassUser(list.userId)}} left" style ="width:82%">  
+                    <div class="message_wrap"  style ="width:100%"> <span class="arrow"></span>
+                      <div class="info"> <a class="name">{{list.consumer_name}}<span *ngIf ="list.userID == service.getLoginDetail.user_id">(Myself)</span></a> <span class="time">{{list.log_time | date:'shortTime'}}</span>
+                        <div class="options_arrow">
+                          <div class="dropdown pull-right" *ngIf ="list.userID == service.getLoginDetail.user_id"> <a class="dropdown-toggle " id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#"> <i class=" icon-caret-down"></i> </a>
+                            <ul class="dropdown-menu " role="menu" aria-labelledby="dLabel">
+                               <li><a href="#"><i class=" icon-trash icon-large"></i> Delete</a></li>
+                             </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text" [innerHTML]="list.remark">   </div>
+                    </div>
+                  </li>
+   
+                   
+                   
+                </ul>
+              </div>
+              <!-- /widget-content --> 
+            </div>
+          <!-- /widget -->
+          <div class="widget widget-table action-table">
+            <div class="widget-header"> <i class="icon-th-list"></i>
+              <h3>Today's Notes</h3>
+ 
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th> Notes </th>
+                    <th>Status</th>
+                    <th class="td-actions"> </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor ="let list of NotesList">
+                  <tr  *ngIf = "list.status == '0'">
+                    <td [innerHTML]="list.remark">  </td>
+                    <td> {{list.status}} </td>
+                    <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+                  </tr>
+                    
+                
+                </tbody>
+              </table>
+            </div>
+            <!-- /widget-content --> 
+        </div>
+          <!-- /widget -->
+       
+          <!-- /widget --> 
+           
+        </div>
+        <!-- /span6 -->
+        <div class="span6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-bookmark"></i>
+              <h3>Important Shortcuts</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <div class="shortcuts"> <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span
+                                        class="shortcut-label">Apps</span> </a><a href="javascript:;" class="shortcut"><i
+                                            class="shortcut-icon icon-bookmark"></i><span class="shortcut-label">Bookmarks</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Reports</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Comments</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i><span
+                                                class="shortcut-label">Users</span> </a><a href="javascript:;" class="shortcut"><i
+                                                    class="shortcut-icon icon-file"></i><span class="shortcut-label">Notes</span> </a><a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-picture"></i> <span class="shortcut-label">Photos</span> </a><a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a> </div>
+              <!-- /shortcuts --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+       
+          <!-- /widget -->
+        
+          <!-- /widget --> 
+           
+          <!-- /widget -->
+        </div>
+
+        <!-- /span6 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /main-inner --> 
+</div>
+<!-- /main -->
+<div class="extra">
+  <div class="extra-inner">
+    <div class="container">
+      <div class="row">
+                    <div class="span3">
+                        <h4>
+                            About Free Admin Template</h4>
+                        <ul>
+                            <li><a href="javascript:;">EGrappler.com</a></li>
+                            <li><a href="javascript:;">Web Development Resources</a></li>
+                            <li><a href="javascript:;">Responsive HTML5 Portfolio Templates</a></li>
+                            <li><a href="javascript:;">Free Resources and Scripts</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Support</h4>
+                        <ul>
+                            <li><a href="javascript:;">Frequently Asked Questions</a></li>
+                            <li><a href="javascript:;">Ask a Question</a></li>
+                            <li><a href="javascript:;">Video Tutorial</a></li>
+                            <li><a href="javascript:;">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Something Legal</h4>
+                        <ul>
+                            <li><a href="javascript:;">Read License</a></li>
+                            <li><a href="javascript:;">Terms of Use</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                    <div class="span3">
+                        <h4>
+                            Open Source jQuery Plugins</h4>
+                        <ul>
+                            <li><a href="http://www.egrappler.com">Open Source jQuery Plugins</a></li>
+                            <li><a href="http://www.egrappler.com;">HTML5 Responsive Tempaltes</a></li>
+                            <li><a href="http://www.egrappler.com;">Free Contact Form Plugin</a></li>
+                            <li><a href="http://www.egrappler.com;">Flat UI PSD</a></li>
+                        </ul>
+                    </div>
+                    <!-- /span3 -->
+                </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /extra-inner --> 
+</div>
+<!-- /extra -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span12"> &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <!-- /span12 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /footer-inner --> 
+</div>
+<!-- /footer --> 
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+ 
+ 

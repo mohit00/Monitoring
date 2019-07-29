@@ -1,0 +1,131 @@
+ 
+      <div class="container" *ngIf ="SiteDetail">
+        <div class="row">
+            <div class="span12">
+  
+            <div class="widget widget-nopad">
+              <div class="widget-header"> <i class="icon-list-alt"></i>
+                <h3> Site's Detail</h3>
+              </div>
+              <!-- /widget-header -->
+              <div class="widget-content">
+                <div class="widget big-stats-container">
+                  <div class="widget-content">
+                    <div id="big_stats" class="cf">
+                        <div class="row">
+                            <div class="span12" style="    margin-top: 10px; padding-left: 3%;">
+                                   
+                       
+                   </div></div></div></div></div></div></div> 
+                  </div>
+                  <!-- /widget-content --> 
+                  
+               
+              
+         
+ 
+            <div class="span6">
+  
+                <div class="widget widget-nopad">
+                  <div class="widget-header"> <i class="icon-list-alt"></i>
+                    <h3> DL Detail</h3>
+                    <div style ="float: right; padding: 0 10px;"><Strong>Total DL - </Strong>{{SiteDetail.totalDL}} </div>
+                  </div>
+                  <!-- /widget-header -->
+                  <div class="widget-content">
+                    <div class="widget big-stats-container">
+                      <div class="widget-content">
+                        <div>
+                            <div>
+                              <div class="chart">
+                                <canvas baseChart
+                                  [data]="pieChartData1"
+                                  [labels]="pieChartLabels1"
+                                  [chartType]="pieChartType"
+                                  [options]="pieChartOptions1"
+                                  [plugins]="pieChartPlugins"
+                                  [colors]="pieChartColors1"
+                                  [legend]="pieChartLegend"
+                                  (chartClick)="chartClicked1($event)">
+                                </canvas>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <!-- /widget-content --> 
+                      
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="span6">
+  
+                    <div class="widget widget-nopad">
+                      <div class="widget-header"> <i class="icon-list-alt"></i>
+                        <h3> DIC Detail</h3>
+                        <div style ="float: right; padding: 0 10px;"><Strong>Total DIC - </Strong>{{SiteDetail.dics}} </div>
+
+                      </div>
+                      <!-- /widget-header -->
+                      <div class="widget-content">
+                        <div class="widget big-stats-container">
+                          <div class="widget-content">
+                            <div>
+                                <div>
+                                  <div class="chart">
+                                    <canvas baseChart
+                                      [data]="pieChartData2"
+                                      [labels]="pieChartLabels2"
+                                      [chartType]="pieChartType"
+                                      [options]="pieChartOptions2"
+                                      [plugins]="pieChartPlugins"
+                                      [colors]="pieChartColors2"
+                                      [legend]="pieChartLegend"
+                                       (chartClick)="chartClicked2($event)">
+                                    </canvas>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <!-- /widget-content --> 
+                          
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="span6">
+  
+                        <div class="widget widget-nopad">
+                          <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3> Meter Detail</h3>
+                            <div style ="float: right; padding: 0 10px;"><Strong>Total Sensors - </Strong>{{SiteDetail.sensors}} </div>
+
+                          </div>
+                          <!-- /widget-header -->
+                          <div class="widget-content">
+                            <div class="widget big-stats-container">
+                              <div class="widget-content">
+                                <div>
+                                    <div>
+                                      <div class="chart">
+                                        <canvas baseChart
+                                          [data]="pieChartData3"
+                                          [labels]="pieChartLabels3"
+                                          [chartType]="pieChartType"
+                                          [options]="pieChartOptions3"
+                                          [plugins]="pieChartPlugins"
+                                          [colors]="pieChartColors3"
+                                          [legend]="pieChartLegend"
+                                          (chartClick)="chartClicked3($event)">
+                                        </canvas>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <!-- /widget-content --> 
+                              
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+</div></div> 

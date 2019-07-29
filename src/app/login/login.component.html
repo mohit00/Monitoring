@@ -1,0 +1,85 @@
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			
+			<a class="brand">
+				Bootstrap Admin Template				
+			</a>		
+		 
+	
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+
+
+
+<div class="account-container">
+	
+	<div class="content clearfix">
+		 
+		<form name ="heroForm" #heroForm="ngForm">
+		
+			<h1>Member Login</h1>		
+			
+			<div class="login-fields">
+				
+				<p>Please provide your details</p>
+				
+				<div class="field">
+					<label for="username">Username</label>
+					<input type="text" class="form-control"  placeholder="Name" id="name"
+					required
+					[(ngModel)]="model.login_id" name="name"
+					#name="ngModel">
+			 <div [hidden]="name.valid || name.pristine"
+				  class="alert alert-danger">
+			   Name is required
+			 </div>				</div> <!-- /field -->
+				
+				<div class="field">
+					<label for="password">Password:</label>
+					<input type="text" class="form-control" id="name" placeholder="Password"
+					required
+					[(ngModel)]="model.password" name="password"
+					#password="ngModel">
+			 <div [hidden]="password.valid || password.pristine"
+				  class="alert alert-danger">
+				  password is required
+			 </div>					</div> <!-- /password -->
+				
+			</div> <!-- /login-fields -->
+			
+			<div class="login-actions">
+				
+				<span class="login-checkbox">
+					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<label class="choice" for="Field">Keep me signed in</label>
+				</span>
+									
+				<button class="button btn btn-success btn-large" [disabled]="!heroForm.form.valid" (click)="Login()">Sign In</button>
+				
+			</div> <!-- .actions -->
+			
+			
+			
+		</form>
+		
+	</div> <!-- /content -->
+	
+</div> <!-- /account-container -->
+
+
+
+<div class="login-extra">
+	<a href="#">Reset Password</a>
+</div> <!-- /login-extra -->

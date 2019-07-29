@@ -1,0 +1,27 @@
+<div class="header">
+    <h4 class="modal-title pull-left"  *ngIf ="title == 'false'" >Add Notes</h4>
+    <h4 class="modal-title pull-left"  *ngIf ="title == 'true'" >Update Notes</h4>
+
+   <i class="fa fa-info" aria-hidden="true" style ="float: right;
+    font-size: 20px;
+    /* padding: 8px; */
+    padding-top: 10px;
+    cursor: pointer;
+    "></i>
+    </div>
+    <div class=" ">
+ 
+<quill-editor
+[(ngModel)]="data.remark"
+  placeholder="Enter Text"
+  [modules]="quillConfig"
+  (onSelectionChanged)="onSelectionChanged($event)"
+  (onContentChanged)="onContentChanged($event)"></quill-editor> 
+  </div> 
+  <div class="modal-footer">
+ 
+    <button type="button" class="btn theme_table_button" (click) ="onCancel();" >Close</button>
+     <button type="button" class="btn theme_table_button"  *ngIf ="title == 'false'"  (click) ="addNote();" >Save</button>
+    <button type="button" class="btn theme_table_button"  *ngIf ="title == 'true'"  (click) ="updateNote();" >Update</button>
+
+  </div>
