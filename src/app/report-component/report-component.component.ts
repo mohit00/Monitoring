@@ -139,10 +139,8 @@ idselected: any;
     status,
     id: this.idselected,
    };
-   alert(JSON.stringify(dataJson));
-   this.Service.getGraphData(dataJson).subscribe(res => {
-     alert(JSON.stringify(res));
-     const initialState = {
+    this.Service.getGraphData(dataJson).subscribe(res => {
+      const initialState = {
       type,
       status,
       data: res.resources,

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,11 +18,13 @@ import {  ModalModule , AlertModule, TabsModule  } from 'ngx-bootstrap';
 import { NoteModelComponent } from './note-model/note-model.component';
 import { LoginComponent } from './login/login.component';
 import { SuccessDialogComponentComponent } from './success-dialog-component/success-dialog-component.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { DatePipe } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ReportDialogComponent } from './report-component/report-dialog/report-dialog.component';
+import { LoaderInterceptor } from './interceptor/loaderinterceptopr';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   
-  providers: [DatePipe],
+  providers: [DatePipe, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

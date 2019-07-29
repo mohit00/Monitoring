@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+// tslint:disable-next-line: import-spacing
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse }
   from '@angular/common/http';
  import { Observable } from 'rxjs/Observable';

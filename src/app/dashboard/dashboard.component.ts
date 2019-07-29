@@ -235,7 +235,7 @@ noticeBoard: any;
       fromLimit: this.fromLimit,
       toLimit: this.toLimit
      };
-     alert(JSON.stringify(dataJson))
+      
      this.service.getSiteGraphData(dataJson).subscribe(res => {
       console.log(JSON.stringify(res))
 

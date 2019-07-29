@@ -15,12 +15,15 @@ export class LoginComponent implements OnInit {
   }
  
     Login() {
-      alert(JSON.stringify(this.model));
+      
       this.service.Login(this.model).subscribe(res => {
-        alert(JSON.stringify(res));
-  
-        this.service.setLoginDetail(res);
-        this.route.navigate(['Dashboard']);
+     
+  alert(JSON.stringify(res))
+  if(res.rc == 0){
+    this.service.setLoginDetail(res);
+    this.route.navigate(['Dashboard']);
+
+  }
   
   
   
