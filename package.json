@@ -29,6 +29,7 @@
     "chartjs-plugin-annotation": "^0.5.7",
     "chartjs-plugin-datalabels": "^0.6.0",
     "ng2-charts": "^2.3.0",
+    "ng2-search-filter": "^0.5.1",
     "ngx-bootstrap": "^5.0.0",
     "ngx-quill": "^7.0.2",
     "ngx-select-dropdown": "^1.0.1",

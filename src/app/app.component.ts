@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router , Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
- 
+ import {AuthService} from '../app/Service/authService'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +8,16 @@ import { Router , Event, NavigationStart, NavigationEnd, NavigationError} from '
 })
 export class AppComponent {
   showHeader:boolean = true;
-  constructor(private Router: Router) {
+  loaderShow:boolean = false;
+  constructor(private Router: Router,private Service:AuthService) {
+    this.Service.loaderCheck.subscribe(res => {
+      if (res === 'show') {
+       this.loaderShow = true;
+      } else {
+       this.loaderShow = false;
+
+      }
+   });
     Router.events.subscribe((event: Event) => {
     if (event instanceof NavigationStart) {
 

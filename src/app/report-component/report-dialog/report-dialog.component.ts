@@ -13,6 +13,7 @@ export class ReportDialogComponent implements OnInit {
    }
   public onClose: Subject<boolean>;
   siteName: any;
+  search:any;
   data: any;
   status: any;
   statusHeader: any;

@@ -21,8 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ReportDialogComponent } from './report-component/report-dialog/report-dialog.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
- DatePipe
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,7 @@ import { ReportDialogComponent } from './report-component/report-dialog/report-d
     ReportDialogComponent
   ],
   entryComponents:[NoteModelComponent,SuccessDialogComponentComponent,ReportDialogComponent],
-  imports: [FormsModule,HttpClientModule,NgSelectModule,
+  imports: [FormsModule,HttpClientModule,NgSelectModule,Ng2SearchPipeModule,
     BrowserModule,QuillModule.forRoot(),ModalModule.forRoot(), AlertModule.forRoot(),TabsModule.forRoot(),
     AppRoutingModule,ChartsModule,FullCalendarModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

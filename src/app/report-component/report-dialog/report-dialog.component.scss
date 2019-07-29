@@ -2,7 +2,24 @@ $theam-color-client:#1C8AD8;
  
  
 
+.inner-addon{
+    position: relative; 
+    i{
+        font-size: 16px;
+    }
+}
+.inner-addon .fa {
+    position: absolute;
+    padding: 6px;
+    pointer-events: none;
  
+  }
+  .left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left: 23px; }
+.right-addon input { padding-right: 30px; }
  .header{
     background-color: $theam-color-client;
     padding: 10px;
