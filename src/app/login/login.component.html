@@ -11,7 +11,7 @@
 			</a>
 			
 			<a class="brand">
-				Bootstrap Admin Template				
+				Monitoring				
 			</a>		
 		 
 	
@@ -25,11 +25,15 @@
 
 <div class="account-container">
 	
-	<div class="content clearfix">
+	<div class="content clearfix" style ="    margin-top: 11px;">
 		 
 		<form name ="heroForm" #heroForm="ngForm">
 		
-			<h1>Member Login</h1>		
+			<img src ="assets/img/xenius-logo.png" style="    margin: auto;
+			margin-left: 59px;
+			padding: 2px;
+			width: 192px;
+			margin-bottom: 11px;">		
 			
 			<div class="login-fields">
 				
@@ -37,6 +41,10 @@
 				
 				<div class="field">
 					<label for="username">Username</label>
+					<i class="fa fa-smile-o" aria-hidden="true" style ="      color: #8c8c8c;  margin-left: 14px;
+					margin-top: 8px;
+					position: fixed;
+					font-size: 24px;"></i>
 					<input type="text" class="form-control"  placeholder="Name" id="name"
 					required
 					[(ngModel)]="model.login_id" name="name"
@@ -47,7 +55,13 @@
 			 </div>				</div> <!-- /field -->
 				
 				<div class="field">
+
 					<label for="password">Password:</label>
+					<i class="fa fa-key" aria-hidden="true" style ="     color: #8c8c8c;   margin-left: 14px;
+					margin-top: 8px;
+					position: fixed;
+					font-size: 24px;"></i>
+
 					<input type="text" class="form-control" id="name" placeholder="Password"
 					required
 					[(ngModel)]="model.password" name="password"
@@ -66,7 +80,7 @@
 					<label class="choice" for="Field">Keep me signed in</label>
 				</span>
 									
-				<button class="button btn btn-success btn-large" [disabled]="!heroForm.form.valid" (click)="Login()">Sign In</button>
+				<button class="button btn btn-success btn-large" [disabled]="!heroForm.form.valid" (click)="Login()" style ="    width: 100%;">Sign In</button>
 				
 			</div> <!-- .actions -->
 			
@@ -80,6 +94,4 @@
 
 
 
-<div class="login-extra">
-	<a href="#">Reset Password</a>
-</div> <!-- /login-extra -->
+ 

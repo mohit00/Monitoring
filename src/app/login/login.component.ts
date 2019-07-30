@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
       
       this.service.Login(this.model).subscribe(res => {
      
-  alert(JSON.stringify(res))
-  if(res.rc == 0){
+   if(res.rc == 0){
     this.service.setLoginDetail(res);
     this.route.navigate(['Dashboard']);
 
