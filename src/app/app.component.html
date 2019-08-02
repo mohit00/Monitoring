@@ -1,3 +1,4 @@
 <app-header *ngIf ="showHeader"></app-header>
 <div id="loader" *ngIf ="loaderShow"><img src="assets/img/loader-preview.svg" alt="loading"></div>
-<router-outlet></router-outlet>
+<div [class] ="getBackgroud()">
+<router-outlet ></router-outlet></div>

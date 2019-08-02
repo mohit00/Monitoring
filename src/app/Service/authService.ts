@@ -37,6 +37,12 @@ export class AuthService {
   setLoginDetail(data){
     sessionStorage.setItem('user',JSON.stringify(data))
 }
+setRememberMe(data){
+  sessionStorage.setItem('remember',(data))
+}
+get RemeberMe(){
+  return sessionStorage.getItem('remember');
+}
   suceesAlertDialog(data ) {
     const initialState = {
       title: data,

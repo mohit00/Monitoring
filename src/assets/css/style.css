@@ -12,11 +12,33 @@ html{
 	height:100%;
 }
 body {
-	 background: #eee url('/assets/img/74589573-internet-of-things-iot-background-with-various-icons.jpg') ;
-	 background-repeat: no-repeat;
-	 background-size: 100% 100%;
-   
+
+   height: 100%;
+   width: 100%;
 	font: 13px/1.7em 'Open Sans';
+}
+.bacgroud{
+	
+
+
+	height: 100%;
+}
+.bacgroud:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background:  url('/assets/img/74589573-internet-of-things-iot-background-with-various-icons.jpg') ;
+	background-repeat: repeat-y;
+	background-size: 100% 100%;    opacity: .4;
+}
+.bacgroud2{
+	padding-top: 2.5em;
+	background: #f1ecec;
+	height: 100%;
 }
     
 p { 
@@ -121,9 +143,7 @@ textarea {
 [3. Subnavbar / .subnavbar]
 */
 
-.subnavbar {
-    	margin-bottom: 2.5em;
-    }
+ 
     
 .subnavbar-inner {
 	height: 60px;
@@ -259,7 +279,6 @@ textarea {
 .main {
 	padding-bottom: 2em;
 	
-	border-bottom: 1px solid #000;
 }
 
 

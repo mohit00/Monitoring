@@ -24,7 +24,9 @@
 
 
 <div class="account-container">
-	
+	<div class="login-container">
+		<div id="output"></div>
+
 	<div class="content clearfix" style ="    margin-top: 11px;">
 		 
 		<form name ="heroForm" #heroForm="ngForm">
@@ -76,7 +78,7 @@
 			<div class="login-actions">
 				
 				<span class="login-checkbox">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" [(ngModel)]="model.check" tabindex="4" />
 					<label class="choice" for="Field">Keep me signed in</label>
 				</span>
 									
@@ -90,8 +92,9 @@
 		
 	</div> <!-- /content -->
 	
-</div> <!-- /account-container -->
+</div> 
 
 
 
  
+</div><!-- /account-container -->

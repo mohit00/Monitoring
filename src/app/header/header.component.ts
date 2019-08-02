@@ -28,9 +28,12 @@ if (this.repeatFunction) {
   onOptionsSelected(ev){
  this.Service.checksite.emit(this.selected)
   }
+  logOut(){
+    sessionStorage.clear();
+    this.Router.navigate(['/']);
+  }
    constructor(private Router: Router, private Service: Service) {
-
-    this.header = [{
+     this.header = [{
       path: '/Dashboard',
       name: 'Dashboard',
       icon: 'icon-dashboard'
@@ -51,6 +54,13 @@ this.getSiteList();
       if (event instanceof NavigationStart) {
       }
       if (event instanceof NavigationEnd) {
+        if (Router.url != '/Login') {
+          if(this.Service.getLoginDetail){
+            
+          }else{
+            this.Router.navigate(['/'])
+          }
+        }
         if (Router.url === '/Report') {
            this.showSelect = true;
            this.getSiteList();

@@ -9,6 +9,13 @@ import { Router , Event, NavigationStart, NavigationEnd, NavigationError} from '
 export class AppComponent {
   showHeader:boolean = true;
   loaderShow:boolean = false;
+  getBackgroud(){
+    if (this.Router.url === '/Login') {
+    return 'bacgroud' 
+    }else{
+      return 'bacgroud2';
+    }
+  }
   constructor(private Router: Router,private Service:AuthService) {
     this.Service.loaderCheck.subscribe(res => {
       if (res === 'show') {
@@ -25,6 +32,9 @@ export class AppComponent {
 
     if (event instanceof NavigationEnd) {
        if (Router.url === '/Login') {
+         if(this.Service.RemeberMe == 'true'){
+           this.Router.navigate(['Dashboard']);
+         }
         this.showHeader = false;
               }else{
                 this.showHeader = true;

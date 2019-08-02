@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
       this.service.Login(this.model).subscribe(res => {
      
    if(res.rc == 0){
+     if(this.model.check){
+       this.service.setRememberMe('true');
+     }
     this.service.setLoginDetail(res);
     this.route.navigate(['Dashboard']);
 

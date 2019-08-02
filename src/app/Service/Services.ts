@@ -48,7 +48,7 @@ dataChange: Observable<any>;
      ) {
 
       this.dataChange = new Observable((observer:Observer<any> ) =>{
-        this.dataChangeObserver = observer;
+         this.dataChangeObserver = observer;
 
       } );
   
