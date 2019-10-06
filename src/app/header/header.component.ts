@@ -45,6 +45,10 @@ if (this.repeatFunction) {
       path: '/Note',
       name: 'Notes',
       icon: 'icon-facetime-video'
+    }, {
+      path: '/Site/Tabular',
+      name: 'Site Tabular',
+      icon: 'icon-list-alt'
     }];
     if (Router.url === '/Report') {
 this.showSelect = true;

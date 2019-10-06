@@ -23,7 +23,7 @@ export class AuthService {
   private missionAnnouncedSource = new Subject<string>();
   missionAnnounced$ = this.missionAnnouncedSource.asObservable();
    firstHeaders: any;
-   BASE_URL = 'http://192.168.40.131:8081/'
+   BASE_URL = 'http:///vapt.myxenius.com:8080/'
  LOGIN='webapi/v1/login'
 
 // tslint:disable-next-line: variable-name

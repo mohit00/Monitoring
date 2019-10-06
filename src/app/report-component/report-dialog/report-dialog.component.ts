@@ -31,17 +31,15 @@ onCancel() {
       this.header = [{name: 'S No.', width: 10}, {name: 'DL Id', width: 20}, {name: 'DL Name', width: 25}, {name: 'GateWay ID', width: 25}
       , {name: 'Status', width: 10}, {name: 'Date/Time', width: 10}];
       this.Key = ['', 'id', 'name', 'gatewayId', 'status', 'dateTime'];
-      if (status === 'Faulty') {
+      if (this.status === 'Faulty') {
         this.statusHeader = 'Faulty';
-       } else if (status === 'healthy') {
+       } else if (this.status === 'healthy') {
         this.statusHeader = 'Healthy';
-       } else if (status === 'Maint') {
+       } else if (this.status === 'Maint') {
         this.statusHeader = 'Healthy';
-       } else if (status === 'Connected') {
+       } else if (this.status === 'Connected') {
         this.statusHeader = 'Connected';
-
        }
-
     }
     if (this.type ===  'DIC') {
       this.header = [{name: 'S No.', width: 10}, {name: 'DIC Id', width: 20}, {name: 'DIC Name', width: 25}, {name: 'Tower Name', width: 25}, {name: 'GateWay ID', width: 25}
@@ -49,33 +47,81 @@ onCancel() {
       this.Key = ['', 'id', 'name', 'towerName', 'gatewayId', 'status', 'dateTime'];
       if (status === 'Faulty') {
         this.statusHeader = 'Faulty';
-       } else if (status === 'healthy') {
+       } else if (this.status === 'healthy') {
         this.statusHeader = 'Healthy';
-       } else if (status === 'Maint') {
+       } else if (this.status === 'Maint') {
         this.statusHeader = 'Healthy';
-       } else if (status === 'Connected') {
+       } else if (this.status === 'Connected') {
         this.statusHeader = 'Connected';
-
+       }else if (this.status === 'unhealthy') {
+        this.statusHeader = 'Un healthy';
        }
     }
     if (this.type ===  'Meter') {
-       this.header = [{name: 'S No.', width: 10},
-       {name: 'Sensor Id', width: 20},
-        {name: 'Sensor Name', width: 25}, {name: 'Tower Name', width: 25}, {name: 'GateWay ID', width: 25}
-      , {name: 'Status', width: 10}, {name: 'Date/Time', width: 10}];
-       this.Key = ['', 'id', 'name', 'towerName', 'gatewayId', 'status', 'dateTime'];
-       if (status === 'Faulty') {
+       
+        if(this.status === 'unhealthy'){
+          this.statusHeader = 'Un healthy';
+
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location', width: 10},
+         {name: 'Sensor Name', width: 10}, {name: 'DIC ID', width: 25}, {name: 'DIC PORT', width: 5}
+       , {name: 'Grid Reading', width: 10}, {name: 'DG Reading', width: 5}, {name: 'State', width: 5}
+       , {name: '	Admin Status', width: 5}, {name: '	Last Reading Time ', width: 20}];
+        this.Key = ['', 'locationNo', 'name', 'dicId','dicPort', 'gridReading', 'dgReading', 'config','admin_status','last_updated_time'];
+       }else if (this.status === 'Faulty') {
+ 
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location', width: 10},
+         {name: 'Sensor Name', width: 10}, {name: 'DIC ID', width: 25}, {name: 'DIC PORT', width: 5}
+       , {name: 'Grid Reading', width: 10}, {name: 'DG Reading', width: 5}, {name: 'State', width: 5}
+       , {name: '	Admin Status', width: 5},{name:'Balance',width:5},{name:'Cut Balance',width:6},
+        {name: '	Last Reading Time ', width: 20}];
+        this.Key = ['', 'locationNo', 'name', 'dicId','dicPort', 'gridReading', 'dgReading', 'config','admin_status','balance','cutBalance','last_updated_time'];
+   
         this.statusHeader = 'Faulty';
-       } else if (status === 'healthy') {
-        this.statusHeader = 'Healthy';
-       } else if (status === 'Maint') {
-        this.statusHeader = 'Healthy';
-       } else if (status === 'ZeroReading') {
+       } else if (this.status === 'healthy') {
+         
+ 
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location', width: 10},
+         {name: 'Sensor Name', width: 10}, {name: 'DIC ID', width: 25}, {name: 'DIC PORT', width: 5}
+       , {name: 'Grid Reading', width: 10}, {name: 'DG Reading', width: 5}, {name: 'State', width: 5}
+       , {name: '	Admin Status', width: 5},{name:'Balance',width:5},{name:'Cut Balance',width:6},
+        {name: '	Last Reading Time ', width: 20}];
+        this.Key = ['', 'locationNo', 'name', 'dicId','dicPort', 'gridReading', 'dgReading', 'config','admin_status','balance','cutBalance','last_updated_time'];
+   
+         this.statusHeader = 'Healthy';
+       } else if (this.status === 'Maint') {
+        this.statusHeader = 'Maintainance';
+        
+ 
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location', width: 10},
+         {name: 'Sensor Name', width: 10}, {name: 'DIC ID', width: 25}, {name: 'DIC PORT', width: 5}
+       , {name: 'Grid Reading', width: 10}, {name: 'DG Reading', width: 5}, {name: 'State', width: 5}
+       , {name: '	Admin Status', width: 5},{name:'Balance',width:5},{name:'Cut Balance',width:6},
+        {name: '	Last Reading Time ', width: 20}];
+        this.Key = ['', 'locationNo', 'name', 'dicId','dicPort', 'gridReading', 'dgReading', 'config','admin_status','balance','cutBalance','last_updated_time'];
+   
+        } else if (this.status === 'zeroreading') {
+
         this.statusHeader = 'Zero Reading';
-
-       } else if (status === 'LowBalance') {
+         				
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location No.', width: 10},
+         {name: 'Balance', width: 10}, {name: 'Alert Balance', width: 10}, {name: 'Last Reading Time', width: 5}
+  ];
+        this.Key = ['', 'locationNo','balance','alertBalance','lastReadingTime'];
+        } else if (this.status === 'LowBalance') {
         this.statusHeader = 'Low Balance';
-
+        this.header = [{name: 'Sr. No.', width: 5},
+        {name: 'Location', width: 10},
+         {name: 'Sensor Name', width: 10}, {name: 'DIC ID', width: 25}, {name: 'DIC PORT', width: 5}
+       , {name: 'Grid Reading', width: 10}, {name: 'DG Reading', width: 5}, {name: 'State', width: 5}
+       , {name: '	Admin Status', width: 5},{name:'Balance',width:5},{name:'Cut Balance',width:6},
+        {name: '	Last Reading Time ', width: 20}];
+        this.Key = ['', 'locationNo', 'name', 'dicId','dicPort', 'gridReading', 'dgReading', 'config','admin_status','balance','cutBalance','last_updated_time'];
+   
        }
     }
   }

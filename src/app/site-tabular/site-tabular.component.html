@@ -1,0 +1,250 @@
+<!-- /subnavbar -->
+<div class="main">
+    <div class="main-inner">
+      <div class=" ">
+        <div class="row">
+            <div class="span12" style="    padding-left: 9px;">
+                
+                <div id="tab" class="btn-group" data-toggle="buttons-radio">
+                        <a href="#prices2" class="btn btn-large btn-info active" data-toggle="tab" (click) ="changetoggel('AMR')">AMR </a>
+                        <a href="#features2" class="btn btn-large btn-info" data-toggle="tab"  (click) ="changetoggel('IBMS')">IBMS</a>
+                          </div>
+                    
+                         
+                      <div class="tab-content card">
+                        <div class="tab-pane active" id="prices2">
+                          <br>
+                           <div class="row">
+                               <div class ="span4" >
+                                <div _ngcontent-serverapp-c5="" class="form-group inner-addon left-addon"><i _ngcontent-serverapp-c5="" aria-hidden="true" class="fa fa-search"></i><input _ngcontent-serverapp-c5="" class="form-control" id="search" placeholder="Search" type="text" [(ngModel)]="search"  (input)="onSearchChange($event.target.value)" ></div>
+                              </div>
+                               <div class="span12" style="    width: 98%;">
+                                    <table  class="table" width = "40%"  >
+                                        <col width="5%">
+                                        <col width="10%">
+                                        <col width="8%">
+                                        <col width="8%">
+                                        <col width="5%">
+                                        <col width="4%">
+                                        <col width="5%">
+                                        <col width="5%">
+                                        <col width="6%">
+                                        <col width="6%">
+                                        <col width="5%">
+                                        <col width="5%">
+                                        <col width="5%">
+                                        <col width="6%">
+                                        <col width="6%">
+                                        <col width="4%">
+                                        <col width="5%">
+                                         <col width="5%">
+                                         <col width="4%">
+                                         <col width="4%">
+                                         <col width="4%">
+
+                                        <colgroup span="7"></colgroup>
+                                        <colgroup span="5"></colgroup>
+                                        <colgroup span="9"></colgroup>
+
+                                     <tr>
+                                       <th colspan="7"  scope="colgroup" style="    width: 45%;">Site Info <span style ="float:right"><i><strong> Total Sites: </strong> 122</i></span></th>
+                                      <th colspan="5" scope="colgroup">DIC <span style ="float:right"> <i><strong>Total DIC: </strong> 12</i></span></th>
+                                      <th  colspan="9"  scope="colgroup" style ="width:32%">Meter<span style ="float:right"><i><strong>Total Meter: </strong>12</i></span></th>
+                                     </tr>
+                                    <tr class ="secondHeader">
+                                        <th scope="col"><span>Code</span></th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Super Visor</th>
+                                        <th scope="col">Mob No.</th>
+                                        <th scope="col">Active Cut Off</th>
+
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Admin Status</th>
+                                        <th scope="col">Count</th>
+                                        <th scope="col">Healthy</th>
+                                        <th scope="col">Un Healthy</th>
+                                        <th scope="col">Maint.	</th>
+                                        <th scope="col">Faulty	</th>
+                                        <th scope="col">Count</th>
+
+                                        <th scope="col">Healthy</th>
+                                        <th scope="col">Un Healthy</th>
+                                        <th scope="col">Zero Read</th>
+                                        <th scope="col">Maint.	</th>
+                                        <th scope="col">Faulty	</th>
+                                        <th scope="col" title="Disconnected Sensor">Disc.	</th>
+                                        <th scope="col"  title="Connected Sensor">Conn.	</th>
+                                        <th scope="col">Low Bal.	</th>
+                                      </tr>
+                                      <tbody>
+                                            <tr  *ngFor ="let list of amrList  | filterNew:search:searchType:advancesymbol:countsearch;let index = index">
+                                            <td>{{list.short_code}}</td>
+                                            <td>{{list.name}}</td>
+                                            <td>{{list.supervisor}}</td>
+                                            <td>{{list.phone}}</td>
+                                            <td>{{list.status}} </td>
+
+                                            <td>{{list.communication}} </td>
+                                            <td>{{list.admin_status}}</td>
+                                             <td>{{list.countDic}} </td>
+                                            <td>{{list.CountHealthyDIC}}</td>
+                                            <td [ngClass] = "colorBox('unhealthydic',list.unhealthyDICS)" (click) ="popuptab('unhealthyDICS',list.unhealthyDICS,list.SiteId,list.name);">{{list.unhealthyDICS}}</td>
+                                            <td  [ngClass] = "colorBox('maintdic',list.maintDic)" (click) ="popuptab('maintDic',list.maintDic,list.SiteId,list.name);">{{list.maintDic}}</td>
+                                            <td  [ngClass] = "colorBox('faultydic',list.faultDic)" (click) ="popuptab('faultDic',list.faultDic,list.SiteId,list.name);">  {{list.faultDic}} </td>
+                                            
+                                            <td  >{{list.sensors}}</td>
+                                            <td >{{list.SensorHealthy}}</td>
+
+                                            <td [ngClass] = "colorBox('unhealthySensors',list.unhealthySensors)" (click) ="popuptab('unhealthySensors',list.unhealthySensors,list.SiteId,list.name);" >{{list.unhealthySensors}}</td>
+                                            <td [ngClass] = "colorBox('ZeroToRead',list.ZeroToRead)" (click) ="popuptab('ZeroToRead',list.ZeroToRead,list.SiteId,list.name);"> {{list.ZeroToRead}}</td>
+                                            <td  [ngClass] = "colorBox('MaintSensor',list.MaintSensor)" (click) ="popuptab('MaintSensor',list.MaintSensor,list.SiteId,list.name);">{{list.MaintSensor}}</td>
+                                            <td [ngClass] = "colorBox('faultySensor',list.faultySensor)" (click) ="popuptab('faultySensor',list.faultySensor,list.SiteId,list.name);">{{list.faultySensor}}</td>
+                                            <td [ngClass] = "colorBox('disconnectSens',list.disconnectSens)" (click) ="popuptab('disconnectSens',list.disconnectSens,list.SiteId,list.name);">{{list.disconnectSens}}</td>
+                                            <td [ngClass] = "colorBox('SensorConnected',list.SensorConnected)" (click) ="popuptab('SensorConnected',list.SensorConnected,list.SiteId,list.name);">{{list.SensorConnected}}</td>
+                                            <td  [ngClass] = "colorBox('lowBalance',list.lowBalance)" (click) ="popuptab('lowBalance',list.lowBalance,list.SiteId,list.name);">{{list.lowBalance}}</td>
+                                            </tr>                          </tbody>
+                                                <tr>
+
+                                                    <th>Total</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th>62</th>
+                                                    <th>425</th>
+                                                    <th>652</th>
+                                                    <th>5</th>
+                                                    <th>54</th>
+                                                    <th>53</th>
+                                                    <th>65</th>
+                                                    <th>65</th>
+                                                    <th>62</th>
+                                                    <th>425</th>
+                                                    <th>652</th>
+                                                    <th>5</th>
+                                               </tr>
+                                   </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane" id="features2">
+                              <br>
+                              <div class="row">
+                              <div class ="span4" >
+                               <div _ngcontent-serverapp-c5="" class="form-group inner-addon left-addon"><i _ngcontent-serverapp-c5="" aria-hidden="true" class="fa fa-search"></i><input _ngcontent-serverapp-c5="" class="form-control" id="search" placeholder="Search" type="text" [(ngModel)]="search"></div>
+                             </div>
+                              <div class="span12" style="    width: 98%;">
+                                <table  class="table" width = "40%"  >
+                                  <col width="5%">
+                                  <col width="10%">
+                                  <col width="10%">
+                                  <col width="9%">
+                                  <col width="6%">
+                                  <col width="5%">
+                                  <col width="6%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="6%">
+                                  <col width="6%">
+                                  <col width="5%">
+                                  <col width="6%">
+                                  <col width="5%">
+                                   <col width="5%">
+                                   <col width="5%">
+                                   <col width="4%">
+                                   <col width="4%">
+
+                                  <colgroup span="7"></colgroup>
+                                  <colgroup span="5"></colgroup>
+                                  <colgroup span="8"></colgroup>
+
+                               <tr>
+                                 <th colspan="7"  scope="colgroup" style="    width: 45%;">Site Info <span style ="float:right"><i><strong> Total Sites: </strong> 122</i></span></th>
+                                <th colspan="5" scope="colgroup">DIC <span style ="float:right"> <i><strong>Total DIC: </strong> 12</i></span></th>
+                                <th  colspan="8"  scope="colgroup" style ="width:32%">Meter<span style ="float:right"><i><strong>Total Meter: </strong>12</i></span></th>
+                               </tr>
+                              <tr class ="secondHeader">
+                                  <th scope="col"><span>Code</span></th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Super Visor</th>
+                                  <th scope="col">Mob No.</th>
+                                  <th scope="col">Active Cut Off</th>
+
+                                  <th scope="col">Type</th>
+                                  <th scope="col">Admin Status</th>
+                                  <th scope="col">Count</th>
+                                  <th scope="col">Healthy</th>
+                                  <th scope="col">Un Healthy</th>
+                                  <th scope="col">Maint.	</th>
+                                  <th scope="col">Faulty	</th>
+                                  <th scope="col">Count</th>
+
+                                  <th scope="col">Healthy</th>
+                                  <th scope="col">Un Healthy</th>
+                                  <th scope="col">0 Reading</th>
+                                  <th scope="col">Maint.	</th>
+                                  <th scope="col">Faulty	</th>
+                                  <th scope="col">Disconnect	</th>
+                                  <th scope="col">Connected	</th>
+                                  <th scope="col">Low Bal.	</th>
+                                </tr>
+                                <tbody>
+                                      <tr  *ngFor ="let list of amrList  | filter:search ;let index = index">
+                                      <td>{{list.short_code}}</td>
+                                      <td>{{list.name}}</td>
+                                      <td>{{list.supervisor}}</td>
+                                      <td>{{list.phone}}</td>
+                                      <td>{{list.status}} </td>
+
+                                      <td>{{list.communication}} </td>
+                                      <td>{{list.admin_status}}</td>
+                                       <td>{{list.countDic}} </td>
+                                      <td>{{list.CountHealthyDIC}}</td>
+                                      <td [ngClass] = "colorBox('unhealthydic',list.unhealthyDICS)" (click) ="popuptab();">{{list.unhealthyDICS}}</td>
+                                      <td  [ngClass] = "colorBox('maintdic',list.maintDic)" >{{list.maintDic}}</td>
+                                      <td  [ngClass] = "colorBox('faultydic',list.faultDic)">  {{list.faultDic}} </td>
+                                      
+                                      <td  >{{list.sensors}}</td>
+                                      <td >{{list.SensorHealthy}}</td>
+
+                                      <td [ngClass] = "colorBox('unhealthySensors',list.unhealthySensors)" >{{list.unhealthySensors}}</td>
+                                      <td [ngClass] = "colorBox('ZeroToRead',list.ZeroToRead)"> {{list.ZeroToRead}}</td>
+                                      <td  [ngClass] = "colorBox('MaintSensor',list.MaintSensor)">{{list.MaintSensor}}</td>
+                                      <td [ngClass] = "colorBox('faultySensor',list.faultySensor)">{{list.faultySensor}}</td>
+                                      <td [ngClass] = "colorBox('disconnectSens',list.disconnectSens)">{{list.disconnectSens}}</td>
+                                      <td [ngClass] = "colorBox('SensorConnected',list.SensorConnected)">{{list.SensorConnected}}</td>
+                                      <td  [ngClass] = "colorBox('lowBalance',list.lowBalance)">{{list.lowBalance}}</td>
+                                      </tr>                          </tbody>
+                                          <tr>
+
+                                              <th>Total</th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th></th>
+                                              <th>62</th>
+                                              <th>425</th>
+                                              <th>652</th>
+                                              <th>5</th>
+                                              <th>54</th>
+                                              <th>53</th>
+                                              <th>65</th>
+                                              <th>65</th>
+                                              <th>62</th>
+                                              <th>425</th>
+                                              <th>652</th>
+                                              <th>5</th>
+                                         </tr>
+                             </table>
+                           </div>
+                         </div>                          
+                        </div>
+                                            </div></div></div></div></div>
+                            </div>

@@ -24,6 +24,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { ReportDialogComponent } from './report-component/report-dialog/report-dialog.component';
 import { LoaderInterceptor } from './interceptor/loaderinterceptopr';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SiteTabularComponent } from './site-tabular/site-tabular.component';
+import { FilterNewPipe } from './filter-new.pipe';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NoteModelComponent,
     LoginComponent,
     SuccessDialogComponentComponent,
-    ReportDialogComponent
+    ReportDialogComponent,
+    SiteTabularComponent,
+    FilterNewPipe
   ],
   entryComponents:[NoteModelComponent,SuccessDialogComponentComponent,ReportDialogComponent],
   imports: [FormsModule,HttpClientModule,NgSelectModule,Ng2SearchPipeModule,

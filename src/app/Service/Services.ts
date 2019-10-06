@@ -24,7 +24,7 @@ export class  Service {
  
   missionAnnounced$ = this.missionAnnouncedSource.asObservable();
    firstHeaders: any;
-   BASE_URL = 'http://192.168.40.131:8081/';
+   BASE_URL = 'http:///vapt.myxenius.com:8080/'
  NOTES_ADD = 'webapi/v1/notes';
  NOTES_UPDATE = 'webapi/v1/updateNotes';
  NOTES_GET = 'webapi/v1/getNotes';
@@ -36,28 +36,21 @@ STATUS_LIST_GRAPH_COUNT =  'webapi/v1/getSiteData';
 SITES_LIST_FROM_BOX = 'webapi/v1/getSiteDetails';
 SITE_DETAIL = 'webapi/v1/getSiteDataDetails ';
 GETGRAPHDATA = 'webapi/v1/getGraphData'
+TABVIEW_DATA = 'webapi/v1/getSiteTabView'
 // tslint:disable-next-line: variable-name
 data: any;
 dataChange: Observable<any>;
   dataChangeObserver: any;
-
   constructor(private _http: HttpClient, private router: Router, private modalService: BsModalService
 // tslint:disable-next-line: no-shadowed-variable
-
-
      ) {
-
       this.dataChange = new Observable((observer:Observer<any> ) =>{
          this.dataChangeObserver = observer;
-
       } );
-  
-      
 // tslint:disable-next-line: deprecation
       this.firstHeaders = new Headers();
       this.firstHeaders.append('Content-Type', 'application/json');
   }
-
    setData(data:any) {
     this.data = data;
     this.dataChangeObserver.next(this.data);
@@ -65,7 +58,6 @@ dataChange: Observable<any>;
   get getData(){
     return this.data;
   }
-  
   setLoginDetail(data: any) {
     sessionStorage.setItem('user', JSON.stringify(data));
 }
@@ -85,6 +77,11 @@ get getLoginDetail() {
        }
        updateNote(data): Observable<any> {
         return this._http.post( this.BASE_URL + this.NOTES_UPDATE  , data )
+        .map(res => res as any)
+        .catch(this.handleError);
+       }
+       getTabView(data): Observable<any> {
+        return this._http.post( this.BASE_URL + this.TABVIEW_DATA  , data )
         .map(res => res as any)
         .catch(this.handleError);
        }
